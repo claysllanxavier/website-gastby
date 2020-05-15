@@ -3,7 +3,7 @@ import { colors, devices } from "../../../styles"
 
 export const TabItem = styled.li`
   display: inline-block;
-  flex: 0 0 33.333333%;
+  flex: 1 0 20%;
   border-bottom: 0.25rem solid #d3d3d3;
   text-align: center;
 
@@ -21,7 +21,7 @@ export const TabLink = styled.a`
   display: inline-block;
   padding: 2rem 0;
   color: ${colors.title};
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   cursor: pointer;
 
   @media ${devices.laptop} {
