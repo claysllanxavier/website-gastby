@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { devices } from "../../styles"
 
 export const Container = styled.div`
   width: 100%;
@@ -18,4 +19,10 @@ export const TabList = styled.ul`
 export const TabContent = styled.div`
   margin: 2rem auto;
   width: 100%;
+
+  @media ${devices.tablet} {
+    &:not(:last-child) {
+      border-bottom: 1px solid #dcdcdc;
+    }
+  }
 `

@@ -16,6 +16,7 @@ import {
   NavLinkCenter,
   NavLinkRight,
   BurguerMenu,
+  Collapse,
 } from "./styles"
 
 function Navbar() {
@@ -39,50 +40,52 @@ function Navbar() {
     <Nav scroll={scroll}>
       <div className="container">
         <Brand href="/">Unnitec</Brand>
-        <BurguerMenu onClick={handleNavbar}>
+        <BurguerMenu scroll={scroll} onClick={handleNavbar}>
           <FaAlignRight className="navbar-toggler-icon"></FaAlignRight>
         </BurguerMenu>
-        <NavCenter>
-          <li>
-            <NavLinkCenter to="/#home">Início</NavLinkCenter>
-          </li>
-          <li>
-            <NavLinkCenter to="/#services">Serviços</NavLinkCenter>
-          </li>
-          <li>
-            <NavLinkCenter to="/#business">Desenvolvimento</NavLinkCenter>
-          </li>
-          <li>
-            <NavLinkCenter to="/#contact">Contato</NavLinkCenter>
-          </li>
-        </NavCenter>
-        <NavRight>
-          <li>
-            <NavLinkRight scroll={scroll} href="#" aria-label="Facebook">
-              <FaFacebook />
-            </NavLinkRight>
-          </li>
-          <li>
-            <NavLinkRight scroll={scroll} href="#" aria-label="Twitter">
-              <FaTwitter />
-            </NavLinkRight>
-          </li>
-          <li>
-            <NavLinkRight scroll={scroll} href="#" aria-label="Youtube">
-              <FaYoutube />
-            </NavLinkRight>
-          </li>
-          <li>
-            <NavLinkRight scroll={scroll} href="#" aria-label="Instagram">
-              <FaInstagram />
-            </NavLinkRight>
-          </li>
-          <li>
-            <NavLinkRight scroll={scroll} href="#" aria-label="Whatsapp">
-              <FaWhatsapp />
-            </NavLinkRight>
-          </li>
-        </NavRight>
+        <Collapse open={navbarOpen}>
+          <NavCenter>
+            <li>
+              <NavLinkCenter to="/#home">Início</NavLinkCenter>
+            </li>
+            <li>
+              <NavLinkCenter to="/#services">Serviços</NavLinkCenter>
+            </li>
+            <li>
+              <NavLinkCenter to="/#business">Desenvolvimento</NavLinkCenter>
+            </li>
+            <li>
+              <NavLinkCenter to="/#contact">Contato</NavLinkCenter>
+            </li>
+          </NavCenter>
+          <NavRight scroll={scroll}>
+            <li>
+              <NavLinkRight href="#" aria-label="Facebook">
+                <FaFacebook />
+              </NavLinkRight>
+            </li>
+            <li>
+              <NavLinkRight href="#" aria-label="Twitter">
+                <FaTwitter />
+              </NavLinkRight>
+            </li>
+            <li>
+              <NavLinkRight href="#" aria-label="Youtube">
+                <FaYoutube />
+              </NavLinkRight>
+            </li>
+            <li>
+              <NavLinkRight href="#" aria-label="Instagram">
+                <FaInstagram />
+              </NavLinkRight>
+            </li>
+            <li>
+              <NavLinkRight href="#" aria-label="Whatsapp">
+                <FaWhatsapp />
+              </NavLinkRight>
+            </li>
+          </NavRight>
+        </Collapse>
       </div>
     </Nav>
   )

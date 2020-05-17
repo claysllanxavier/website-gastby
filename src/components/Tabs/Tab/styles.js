@@ -13,7 +13,7 @@ export const TabItem = styled.li`
   }
 
   @media ${devices.tablet} {
-    flex: 1 0 100%;
+    display: none;
   }
 `
 

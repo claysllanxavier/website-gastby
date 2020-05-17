@@ -16,7 +16,6 @@ export const Nav = styled.nav`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     padding: 0.5rem 1rem;
   }
 `
@@ -40,7 +39,7 @@ export const BurguerMenu = styled.button`
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  color: ${colors.title};
+  color: ${props => (props.scroll ? "#fff" : colors.title)};
   display: none;
 
   &:hover,
@@ -60,6 +59,24 @@ export const BurguerMenu = styled.button`
 
   @media ${devices.laptop} {
     display: block;
+    margin-left: auto;
+  }
+
+  @media ${devices.tablet} {
+    color: ${colors.title};
+  }
+`
+
+export const Collapse = styled.div`
+  display: flex;
+  flex: 1;
+
+  @media ${devices.laptop} {
+    flex: 0 1 auto;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    display: ${props => (props.open ? "flex" : "none")};
   }
 `
 
@@ -72,7 +89,8 @@ export const NavCenter = styled.ul`
   margin: 0 auto;
 
   @media ${devices.laptop} {
-    display: none;
+    flex-direction: column;
+    margin: 0;
   }
 `
 
@@ -82,10 +100,19 @@ export const NavRight = styled.ul`
   padding-left: 0;
   list-style: none;
   flex-wrap: wrap;
-  margin: 0 0 0 auto;
+  margin-left: auto;
 
   @media ${devices.laptop} {
-    display: none;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  a {
+    color: ${props => (props.scroll ? "#fff" : colors.title)};
+
+    @media ${devices.laptop} {
+      color: ${colors.title};
+    }
   }
 `
 
@@ -101,10 +128,13 @@ export const NavLinkRight = styled.a`
   display: block;
   padding: 0.5rem 0.55rem;
   font-size: 1.15rem;
-  color: ${props => (props.scroll ? "#fff" : colors.title)};
 
   &:hover,
   &:focus {
     text-decoration: none;
+  }
+
+  @media ${devices.laptop} {
+    padding: 0.5rem 1rem;
   }
 `
